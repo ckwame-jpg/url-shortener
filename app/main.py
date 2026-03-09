@@ -1,10 +1,12 @@
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.database import Base, engine, SessionLocal
-from app.models import User, URL  # noqa: F401
+
 from app.auth import hash_password
-from app.routes import users, urls, analytics
+from app.database import Base, SessionLocal, engine
+from app.models import URL, User  # noqa: F401
+from app.routes import analytics, urls, users
 
 
 @asynccontextmanager

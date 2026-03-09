@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 from typing import Optional
+
 from user_agents import parse
+
 from app.celery_app import celery
 from app.database import SessionLocal
-from app.models import Click, URL
+from app.models import URL, Click
 
 
 def parse_device_type(user_agent_string: Optional[str]) -> str:

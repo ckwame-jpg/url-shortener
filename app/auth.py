@@ -1,11 +1,13 @@
 import os
 from datetime import datetime, timedelta, timezone
+
+from dotenv import load_dotenv
 from fastapi import Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
-from dotenv import load_dotenv
+
 from app.database import get_db
 from app.models import User
 

@@ -5,7 +5,9 @@ os.environ["SECRET_KEY"] = "test-secret-key"
 os.environ["REDIS_URL"] = "redis://localhost:6379/0"
 
 from unittest.mock import MagicMock  # noqa: E402
+
 import app.redis_client as rc  # noqa: E402
+
 mock_redis = MagicMock()
 mock_redis.get.return_value = None
 rc.redis_client = mock_redis
@@ -15,8 +17,8 @@ from fastapi.testclient import TestClient  # noqa: E402
 from sqlalchemy import create_engine  # noqa: E402
 from sqlalchemy.orm import sessionmaker  # noqa: E402
 from sqlalchemy.pool import StaticPool  # noqa: E402
+
 from app.database import Base, get_db  # noqa: E402
-from app.models import User, URL, Click  # noqa: E402
 from app.main import app  # noqa: E402
 
 engine = create_engine(

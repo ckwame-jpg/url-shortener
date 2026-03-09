@@ -1,10 +1,12 @@
 from collections import Counter
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+
+from app.auth import get_current_user
 from app.database import get_db
 from app.models import URL, Click, User
-from app.schemas import URLStats, ClickOut
-from app.auth import get_current_user
+from app.schemas import ClickOut, URLStats
 
 router = APIRouter()
 

@@ -1,5 +1,5 @@
+
 from app.models import Click
-from datetime import datetime, timezone
 
 
 def test_stats_empty(client, auth_headers):
